@@ -45,19 +45,28 @@ public class MovementInput : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		InputMagnitude ();
+		Movimiento();
+		 if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            transform.Rotate(Vector3.up, -Speed * Time.deltaTime);
+        }
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+            transform.Rotate(Vector3.up, Speed * Time.deltaTime);
+        }
+		// InputMagnitude ();
 
-        isGrounded = controller.isGrounded;
-        if (isGrounded)
-        {
-            verticalVel -= 0;
-        }
-        else
-        {
-            verticalVel -= 1;
-        }
-        moveVector = new Vector3(0, verticalVel * .2f * Time.deltaTime, 0);
-        controller.Move(moveVector);
+    //     isGrounded = controller.isGrounded;
+    //     if (isGrounded)
+    //     {
+    //         verticalVel -= 0;
+    //     }
+    //     else
+    //     {
+    //         verticalVel -= 1;
+    //     }
+    //     moveVector = new Vector3(0, verticalVel * .2f * Time.deltaTime, 0);
+    //     controller.Move(moveVector);
 
 
     }
@@ -84,41 +93,66 @@ public class MovementInput : MonoBehaviour {
 		}
 	}
 
-    public void LookAt(Vector3 pos)
+    // public void LookAt(Vector3 pos)
+    // {
+    //     transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(pos), desiredRotationSpeed);
+    // }
+
+    // public void RotateToCamera(Transform t)
+    // {
+
+    //     var camera = Camera.main;
+    //     var forward = cam.transform.forward;
+    //     var right = cam.transform.right;
+
+    //     desiredMoveDirection = forward;
+
+    //     t.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(desiredMoveDirection), desiredRotationSpeed);
+    // }
+
+	// void InputMagnitude() {
+	// 	//Calculate Input Vectors
+	// 	InputX = Input.GetAxis ("Horizontal");
+	// 	InputZ = Input.GetAxis ("Vertical");
+
+	// 	//anim.SetFloat ("InputZ", InputZ, VerticalAnimTime, Time.deltaTime * 2f);
+	// 	//anim.SetFloat ("InputX", InputX, HorizontalAnimSmoothTime, Time.deltaTime * 2f);
+
+	// 	//Calculate the Input Magnitude
+	// 	Speed = new Vector2(InputX, InputZ).sqrMagnitude;
+
+  //       //Physically move player
+
+	// 	if (Speed > allowPlayerRotation) {
+	// 		anim.SetFloat ("Blend", Speed, StartAnimTime, Time.deltaTime);
+	// 		PlayerMoveAndRotation ();
+	// 	} else if (Speed < allowPlayerRotation) {
+	// 		anim.SetFloat ("Blend", Speed, StopAnimTime, Time.deltaTime);
+	// 	}
+	// }
+	void Movimiento (){
+    float vertical = Input.GetAxis("Vertical"); 
+    float horizontal = Input.GetAxis("Horizontal");
+    float movimientoStandar = 15f;
+    
+    if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
     {
-        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(pos), desiredRotationSpeed);
+        movimientoStandar = 30f;
     }
-
-    public void RotateToCamera(Transform t)
+    else
     {
-
-        var camera = Camera.main;
-        var forward = cam.transform.forward;
-        var right = cam.transform.right;
-
-        desiredMoveDirection = forward;
-
-        t.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(desiredMoveDirection), desiredRotationSpeed);
+        movimientoStandar = 15f;
     }
+    
+    desiredMoveDirection = new Vector3(horizontal, 0f, vertical);
+    transform.Translate(desiredMoveDirection * movimientoStandar * Time.deltaTime);
 
-	void InputMagnitude() {
-		//Calculate Input Vectors
-		InputX = Input.GetAxis ("Horizontal");
-		InputZ = Input.GetAxis ("Vertical");
-
-		//anim.SetFloat ("InputZ", InputZ, VerticalAnimTime, Time.deltaTime * 2f);
-		//anim.SetFloat ("InputX", InputX, HorizontalAnimSmoothTime, Time.deltaTime * 2f);
-
-		//Calculate the Input Magnitude
-		Speed = new Vector2(InputX, InputZ).sqrMagnitude;
-
-        //Physically move player
-
-		if (Speed > allowPlayerRotation) {
-			anim.SetFloat ("Blend", Speed, StartAnimTime, Time.deltaTime);
-			PlayerMoveAndRotation ();
-		} else if (Speed < allowPlayerRotation) {
-			anim.SetFloat ("Blend", Speed, StopAnimTime, Time.deltaTime);
-		}
-	}
+    if (desiredMoveDirection.magnitude > 0f) {
+        anim.SetFloat("Blend", movimientoStandar, StartAnimTime, Time.deltaTime);
+    } else {
+        anim.SetFloat("Blend", 0f);
+    }
 }
+
+}
+
