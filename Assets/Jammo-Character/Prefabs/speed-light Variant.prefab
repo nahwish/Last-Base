@@ -8,6 +8,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1307865167579697736, guid: 5545793f4a42c464693f5410e29d36b5, type: 3}
+      propertyPath: m_Range
+      value: 99.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1307865167579697736, guid: 5545793f4a42c464693f5410e29d36b5, type: 3}
       propertyPath: m_DrawHalo
       value: 0
       objectReference: {fileID: 0}
@@ -57,7 +61,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1307865167579697743, guid: 5545793f4a42c464693f5410e29d36b5, type: 3}
       propertyPath: m_Name
-      value: speed-light
+      value: speed-light Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5545793f4a42c464693f5410e29d36b5, type: 3}
