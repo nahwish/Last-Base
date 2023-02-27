@@ -39,7 +39,7 @@ public class MovementInput : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		anim = this.GetComponent<Animator> ();
-		cam = Camera.main;
+		// cam = Camera.main;
 		controller = this.GetComponent<CharacterController> ();
 	}
 	
@@ -71,27 +71,27 @@ public class MovementInput : MonoBehaviour {
 
     }
 
-    void PlayerMoveAndRotation() {
-		InputX = Input.GetAxis ("Horizontal");
-		InputZ = Input.GetAxis ("Vertical");
+    // void PlayerMoveAndRotation() {
+	// 	InputX = Input.GetAxis ("Horizontal");
+	// 	InputZ = Input.GetAxis ("Vertical");
 
-		var camera = Camera.main;
-		var forward = cam.transform.forward;
-		var right = cam.transform.right;
+	// 	var camera = Camera.main;
+	// 	var forward = cam.transform.forward;
+	// 	var right = cam.transform.right;
 
-		forward.y = 0f;
-		right.y = 0f;
+	// 	forward.y = 0f;
+	// 	right.y = 0f;
 
-		forward.Normalize ();
-		right.Normalize ();
+	// 	forward.Normalize ();
+	// 	right.Normalize ();
 
-		desiredMoveDirection = forward * InputZ + right * InputX;
+	// 	desiredMoveDirection = forward * InputZ + right * InputX;
 
-		if (blockRotationPlayer == false) {
-			transform.rotation = Quaternion.Slerp (transform.rotation, Quaternion.LookRotation (desiredMoveDirection), desiredRotationSpeed);
-            controller.Move(desiredMoveDirection * Time.deltaTime * Velocity);
-		}
-	}
+	// 	if (blockRotationPlayer == false) {
+	// 		transform.rotation = Quaternion.Slerp (transform.rotation, Quaternion.LookRotation (desiredMoveDirection), desiredRotationSpeed);
+    //         controller.Move(desiredMoveDirection * Time.deltaTime * Velocity);
+	// 	}
+	// }
 
     // public void LookAt(Vector3 pos)
     // {
