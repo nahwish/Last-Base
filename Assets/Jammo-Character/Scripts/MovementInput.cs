@@ -84,10 +84,10 @@ void Movimiento() {
     float movimientoStandar = 15f;
     Rigidbody rb = GetComponent<Rigidbody>();
     
-    if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)) {
-        movimientoStandar = 30f;
+    if (Input.GetKey(KeyCode.LeftShift)) {
+        movimientoStandar = 12f;
     } else {
-        movimientoStandar = 15f;
+        movimientoStandar = 7f;
     }
 
     desiredMoveDirection = new Vector3(horizontal, 0f, vertical);
