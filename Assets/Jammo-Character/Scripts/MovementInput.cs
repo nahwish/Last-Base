@@ -54,105 +54,55 @@ public class MovementInput : MonoBehaviour {
         {
             transform.Rotate(Vector3.up, Speed * Time.deltaTime);
         }
-		// InputMagnitude ();
+		
+// 	void Movimiento (){
+//     float vertical = Input.GetAxis("Vertical"); 
+//     float horizontal = Input.GetAxis("Horizontal");
+//     float movimientoStandar = 15f;
+    
+//     if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+//     {
+//         movimientoStandar = 30f;
+//     }
+//     else
+//     {
+//         movimientoStandar = 15f;
+//     }
+    
+//     desiredMoveDirection = new Vector3(horizontal, 0f, vertical);
+//     transform.Translate(desiredMoveDirection * movimientoStandar * Time.deltaTime);
 
-    //     isGrounded = controller.isGrounded;
-    //     if (isGrounded)
-    //     {
-    //         verticalVel -= 0;
-    //     }
-    //     else
-    //     {
-    //         verticalVel -= 1;
-    //     }
-    //     moveVector = new Vector3(0, verticalVel * .2f * Time.deltaTime, 0);
-    //     controller.Move(moveVector);
-
-
-    }
-
-    // void PlayerMoveAndRotation() {
-	// 	InputX = Input.GetAxis ("Horizontal");
-	// 	InputZ = Input.GetAxis ("Vertical");
-
-	// 	var camera = Camera.main;
-	// 	var forward = cam.transform.forward;
-	// 	var right = cam.transform.right;
-
-	// 	forward.y = 0f;
-	// 	right.y = 0f;
-
-	// 	forward.Normalize ();
-	// 	right.Normalize ();
-
-	// 	desiredMoveDirection = forward * InputZ + right * InputX;
-
-	// 	if (blockRotationPlayer == false) {
-	// 		transform.rotation = Quaternion.Slerp (transform.rotation, Quaternion.LookRotation (desiredMoveDirection), desiredRotationSpeed);
-    //         controller.Move(desiredMoveDirection * Time.deltaTime * Velocity);
-	// 	}
-	// }
-
-    // public void LookAt(Vector3 pos)
-    // {
-    //     transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(pos), desiredRotationSpeed);
-    // }
-
-    // public void RotateToCamera(Transform t)
-    // {
-
-    //     var camera = Camera.main;
-    //     var forward = cam.transform.forward;
-    //     var right = cam.transform.right;
-
-    //     desiredMoveDirection = forward;
-
-    //     t.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(desiredMoveDirection), desiredRotationSpeed);
-    // }
-
-	// void InputMagnitude() {
-	// 	//Calculate Input Vectors
-	// 	InputX = Input.GetAxis ("Horizontal");
-	// 	InputZ = Input.GetAxis ("Vertical");
-
-	// 	//anim.SetFloat ("InputZ", InputZ, VerticalAnimTime, Time.deltaTime * 2f);
-	// 	//anim.SetFloat ("InputX", InputX, HorizontalAnimSmoothTime, Time.deltaTime * 2f);
-
-	// 	//Calculate the Input Magnitude
-	// 	Speed = new Vector2(InputX, InputZ).sqrMagnitude;
-
-  //       //Physically move player
-
-	// 	if (Speed > allowPlayerRotation) {
-	// 		anim.SetFloat ("Blend", Speed, StartAnimTime, Time.deltaTime);
-	// 		PlayerMoveAndRotation ();
-	// 	} else if (Speed < allowPlayerRotation) {
-	// 		anim.SetFloat ("Blend", Speed, StopAnimTime, Time.deltaTime);
-	// 	}
-	// }
-	void Movimiento (){
-    float vertical = Input.GetAxis("Vertical"); 
+//     if (desiredMoveDirection.magnitude > 0f) {
+//         anim.SetFloat("Blend", movimientoStandar, StartAnimTime, Time.deltaTime);
+//     } else {
+//         anim.SetFloat("Blend", 0f);
+//     }
+// }
+void Movimiento() {
+    float vertical = Input.GetAxis("Vertical");
     float horizontal = Input.GetAxis("Horizontal");
     float movimientoStandar = 15f;
+    Rigidbody rb = GetComponent<Rigidbody>();
     
-    if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
-    {
+    if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)) {
         movimientoStandar = 30f;
-    }
-    else
-    {
+    } else {
         movimientoStandar = 15f;
     }
-    
+
     desiredMoveDirection = new Vector3(horizontal, 0f, vertical);
-    transform.Translate(desiredMoveDirection * movimientoStandar * Time.deltaTime);
 
     if (desiredMoveDirection.magnitude > 0f) {
+        // Aquí aplicamos la fuerza al Rigidbody en la dirección deseada
+        rb.AddForce(desiredMoveDirection * movimientoStandar);
         anim.SetFloat("Blend", movimientoStandar, StartAnimTime, Time.deltaTime);
     } else {
         anim.SetFloat("Blend", 0f);
     }
-}
 
+    // Aquí también puedes aplicar un movimiento usando transform.Translate si lo necesitas
+    transform.Translate(desiredMoveDirection * movimientoStandar * Time.deltaTime);
+}
+    }
 }
 
