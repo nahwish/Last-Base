@@ -18,6 +18,10 @@ using UnityEngine;
         {
             currentHealth -= 0.2f;
             Debug.Log("Enemy health RECIBIR PAPITOP: " + currentHealth);
+            if (currentHealth <= 0)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }
