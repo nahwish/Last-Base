@@ -5,10 +5,15 @@ using UnityEngine;
 public class EspiralFuego : MonoBehaviour
 {
     private GameObject lightsInstance;
+    private GameObject fireInstance;
     [SerializeField]
-    [Tooltip("Prefab a instanciar")]
+    [Tooltip("Prefab a instanciar 1")]
     private GameObject lightsPrefab;
+    [SerializeField]
+    [Tooltip("Prefab a instanciar 2")]
+    private GameObject sprayFuego;
     private bool isActive = false;
+    private bool fuegoIsActive = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +37,22 @@ public class EspiralFuego : MonoBehaviour
                 lightsInstance = Instantiate(lightsPrefab, transform.position, transform.rotation, transform);
                 lightsInstance.transform.localPosition = new Vector3(0f, 0.5f, 0f); // ajusta la altura de la luz a 2 unidades sobre el objeto
                 isActive = true;
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            if (fuegoIsActive)
+            {
+                // Si las luces ya están activas, las apaga destruyendo la instancia
+                Destroy(fireInstance);
+                fuegoIsActive = false;
+            }
+            else
+            {
+                // Si las luces están apagadas, las enciende instanciando el prefab
+                fireInstance = Instantiate(sprayFuego, transform.position, transform.rotation, transform);
+                fireInstance.transform.localPosition = new Vector3(0f, 0.5f, 0f); // ajusta la altura de la luz a 2 unidades sobre el objeto
+                fuegoIsActive = true;
             }
         }
     }
