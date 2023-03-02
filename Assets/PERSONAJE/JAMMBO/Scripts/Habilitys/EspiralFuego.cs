@@ -54,6 +54,7 @@ public class EspiralFuego : MonoBehaviour
                 fireInstance.transform.localPosition = new Vector3(0f, 0.5f, 0f); // ajusta la altura de la luz a 2 unidades sobre el objeto
                 fuegoIsActive = true;
             }
+        
         }
     }
 }

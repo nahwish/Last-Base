@@ -9,6 +9,7 @@ using UnityEngine;
 
     void Start()
     {
+        Destroy(gameObject,8f);
         currentHealth = maxHealth;
     }
 

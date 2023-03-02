@@ -91,6 +91,18 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 548341266265942260, guid: e902b2cfa940b18499db465a252b885d, type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 548341266265942260, guid: e902b2cfa940b18499db465a252b885d, type: 3}
+      propertyPath: lengthInSec
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 548341266265942260, guid: e902b2cfa940b18499db465a252b885d, type: 3}
+      propertyPath: InitialModule.size3D
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e902b2cfa940b18499db465a252b885d, type: 3}
 --- !u!1 &613928481706490888 stripped

@@ -6,6 +6,8 @@ TagManager:
   tags:
   - PlayerEyes
   - Ground
+  - Enemy
+  - Suelo
   layers:
   - Default
   - TransparentFX
