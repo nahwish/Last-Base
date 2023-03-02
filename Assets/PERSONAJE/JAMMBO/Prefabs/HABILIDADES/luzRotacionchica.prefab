@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3766773615729227732, guid: 93747cb8a3a04cc4687a1b827b7d3aac, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3792047163796725504, guid: 93747cb8a3a04cc4687a1b827b7d3aac, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -89,7 +93,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3795616518565162740, guid: 93747cb8a3a04cc4687a1b827b7d3aac, type: 3}
       propertyPath: m_Name
-      value: RotatorPS2 Variant
+      value: luzRotacionchica
       objectReference: {fileID: 0}
     - target: {fileID: 3800771692119951408, guid: 93747cb8a3a04cc4687a1b827b7d3aac, type: 3}
       propertyPath: m_LocalScale.x
