@@ -13,7 +13,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 130238, guid: 9a5fb82b90aeeed449cc9e1a5ca2ac29, type: 3}
       propertyPath: m_TagString
-      value: Finish
+      value: Spray
       objectReference: {fileID: 0}
     - target: {fileID: 422830, guid: 9a5fb82b90aeeed449cc9e1a5ca2ac29, type: 3}
       propertyPath: m_RootOrder
@@ -121,17 +121,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.4199998, y: 1.42, z: 7.6904125}
-  m_Center: {x: 0.0000007060309, y: 0, z: 4.7275076}
---- !u!114 &3719568080192415118
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6226376838031900200}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2034f19aa34f5b4fac3be01b3fdcc9c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Size: {x: 1.4199998, y: 1.42, z: 6.831191}
+  m_Center: {x: 0.0000029939663, y: 0.000000009841781, z: 4.297863}

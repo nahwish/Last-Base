@@ -4778,7 +4778,7 @@ GameObject:
   - component: {fileID: -7162822235500190307}
   m_Layer: 0
   m_Name: Sprays_02
-  m_TagString: Finish
+  m_TagString: Gun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
