@@ -8,6 +8,10 @@ TagManager:
   - Ground
   - Enemy
   - Suelo
+  - FxTemporaire
+  - Heart
+  - Box
+  - Gun
   layers:
   - Default
   - TransparentFX

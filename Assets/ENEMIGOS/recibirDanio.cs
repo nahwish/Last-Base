@@ -7,6 +7,7 @@ using UnityEngine;
 
    public GameObject explosionPrefab1; // Objeto de explosión que se instanciará
    public GameObject explosionPrefab2; // Objeto de explosión que se instanciará
+   public GameObject explosionPrefab3; // Objeto de explosión que se instanciará
     [SerializeField] [Tooltip("Vida inicial del enemigo")] [Range(1,100)]
     [Header("Vida Inicial")]
     private float maxHealth = 100f;
@@ -29,9 +30,11 @@ void OnTriggerStay(Collider other)
         Debug.Log("Enemy health RECIBIR PAPITOP: " + currentHealth);
         if (currentHealth <= 0)
         {
+            
             // Crea una instancia del objeto de explosión en la posición actual del objeto
             Instantiate(explosionPrefab1, transform.position, Quaternion.identity);
             Instantiate(explosionPrefab2, transform.position, Quaternion.identity);
+            Instantiate(explosionPrefab3, transform.position, transform.rotation);
             Destroy(gameObject); // Destruye el objeto actual
         }
     }
