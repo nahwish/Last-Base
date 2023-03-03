@@ -4,12 +4,17 @@ using UnityEngine;
 
 
   public class recibirDanio : MonoBehaviour {
-    public float maxHealth = 100f;
+
+    [SerializeField] [Tooltip("Vida inicial del enemigo")] [Range(1,100)]
+    [Header("Vida Inicial")]
+    private float maxHealth = 100f;
+
+    [Tooltip("Vida actual del enemigo")]
+    [Header("Vida Actual")]
     public float currentHealth;
 
     void Start()
-    {
-        Destroy(gameObject,8f);
+    {  
         currentHealth = maxHealth;
     }
 

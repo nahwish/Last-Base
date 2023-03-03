@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 402278}
   - component: {fileID: 19804268}
   - component: {fileID: 19988516}
+  - component: {fileID: 7744852339350869017}
   m_Layer: 0
   m_Name: magic_ring_05
   m_TagString: Untagged
@@ -4822,6 +4823,19 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &7744852339350869017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 111946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d68c117325cf3f4cb476333b1205be1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 0
 --- !u!1 &129964
 GameObject:
   m_ObjectHideFlags: 0
