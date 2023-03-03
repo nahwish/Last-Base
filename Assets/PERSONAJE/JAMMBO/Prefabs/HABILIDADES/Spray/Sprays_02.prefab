@@ -4775,7 +4775,6 @@ GameObject:
   - component: {fileID: 422830}
   - component: {fileID: 19856866}
   - component: {fileID: 19927464}
-  - component: {fileID: -7162822235500190307}
   m_Layer: 0
   m_Name: Sprays_02
   m_TagString: Gun
@@ -9585,18 +9584,6 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
---- !u!114 &-7162822235500190307
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 130238}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02e11dff17e24e145ad9027f06cba151, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &133356
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,6 +12,7 @@ TagManager:
   - Heart
   - Box
   - Gun
+  - Spray
   layers:
   - Default
   - TransparentFX
