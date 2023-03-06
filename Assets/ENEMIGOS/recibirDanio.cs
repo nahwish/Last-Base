@@ -7,14 +7,14 @@ using UnityEngine;
 
     public GameObject animation1; // Objeto de explosión que se instanciará
     public GameObject animation2; // Objeto de explosión que se instanciará
-    public enum ObjectInsideOptions { None, Object1, Object2 }
+    public enum options {none,uno}
+    public enum ObjectInsideOptions { None, Objects }
     public ObjectInsideOptions objectInsideOption;
     public GameObject objectInside; // Objeto de explosión que se instanciará
     
     [SerializeField] [Tooltip("Vida inicial del enemigo")] [Range(1,100)]
     [Header("Vida Inicial")]
     private float maxHealth = 100f;
-
     [Tooltip("Vida actual del enemigo")]
     [Header("Vida Actual")]
     public float currentHealth;
@@ -37,13 +37,9 @@ using UnityEngine;
                 Instantiate(animation1, transform.position, Quaternion.identity);
                 Instantiate(animation2, transform.position, Quaternion.identity);
 
-                if (objectInsideOption == ObjectInsideOptions.Object1)
+                if (objectInsideOption == ObjectInsideOptions.Objects)
                 {
                     Instantiate(objectInside, transform.position, transform.rotation);
-                }
-                else if (objectInsideOption == ObjectInsideOptions.Object2)
-                {
-                    // Instancia otro objeto si la opción es "Object2"
                 }
                 // No se instancia ningún objeto si la opción es "None"
 
@@ -51,6 +47,9 @@ using UnityEngine;
             }
         }
     }
+
+    
+
     void OnCollisionEnter(Collision collision)
 {
     if (collision.gameObject.tag == "Spray")
@@ -63,22 +62,17 @@ using UnityEngine;
             Instantiate(animation1, transform.position, Quaternion.identity);
             Instantiate(animation2, transform.position, Quaternion.identity);
 
-            if (objectInsideOption == ObjectInsideOptions.Object1)
+            if (objectInsideOption == ObjectInsideOptions.Objects)
             {
                 Instantiate(objectInside, transform.position, transform.rotation);
-            }
-            else if (objectInsideOption == ObjectInsideOptions.Object2)
-            {
-                // Instancia otro objeto si la opción es "Object2"
             }
             // No se instancia ningún objeto si la opción es "None"
 
             Destroy(gameObject); // Destruye el objeto actual
         }
     }
-}
 
 }
 
-
+  }
 
